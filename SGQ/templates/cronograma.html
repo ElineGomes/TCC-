@@ -1,0 +1,23 @@
+{% extends "body.html" %}
+{% block conteudo %}
+    <h1>Cronograma de Inspeção</h1>
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>Processo</th>
+                        <th>Inspeção</th>
+                        <th>Tempo (s)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for atividade in atividades %}
+                                <tr>
+                                    <td>{{ atividade.processo }}</td>
+                                    <td>{{ atividade.atividade }}</td>
+                                    <td>{{ atividade.tempo }}</td>
+                                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+{% endblock %}
