@@ -17,7 +17,7 @@ class DecimalEncoder(json.JSONEncoder):
 
 class lista_atividades():
     def __init__(self,id_processo_atividade, processo, atividade, tempo):
-        dynamodb = boto3.resource('dynamodb', aws_access_key_id='AKIASMN4KHHRVQZK5Y7L', aws_secret_access_key = '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', region_name = 'us-east-2', endpoint_url="http://dynamodb.us-east-2.amazonaws.com")
+        dynamodb = boto3.resource('dynamodb', endpoint_url="http://dynamodb.us-east-2.amazonaws.com")
         table = dynamodb.Table('lista_atividade')
         try:
             response = table.get_item(
